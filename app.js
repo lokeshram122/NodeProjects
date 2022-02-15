@@ -1,11 +1,13 @@
 var express = require('express')
+var bodyparser = require('body-parser')
 
 
 var app = express();
 
 var router = express.Router();
 
-app.use(express.json())
+
+app.use(bodyparser.json({limit:"50mb"}))
 
 app.get("/",(req,res)=>{
     res.send("Hello World")
